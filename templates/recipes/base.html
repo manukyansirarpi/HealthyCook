@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'recipes:home'%}" >home</a></li>
+                <li><a href="{% url 'recipes:login'%}" >login</a></li>
+                <li><a href="{% url 'recipes:register'%}" >register </a></li>
+            </ul>
+        </nav>
+        {% block body_bloxk %} {% endblock %}
+    </body>
+</html>
