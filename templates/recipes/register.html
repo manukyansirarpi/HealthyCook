@@ -3,5 +3,18 @@
 {% block title %} Register {% endblock %}
 
 {% block body_bloxk %}
-<h1>register</h1>
+    {% if registered %}
+        <h1>Welcome to Recipes, lets start cooking ! </h1>
+
+        <a href="{% url 'recipes:recipes'%}" >Go to Recipes</a>
+    {% else %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token  %}
+            {{user_form.as_p}}
+            {{acount_form.as_p}}
+            <input type="submit" name="" value="Register">
+        </form>
+    {%endif %}
+
+
 {% endblock %}

@@ -3,12 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     </head>
     <body>
+    {{user.is_authenticated}}
         <nav>
+
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout'%}" >logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'recipes:user_login'%}" >login</a></li>
+              {% endif %}
+            </ul>
+
             <ul>
                 <li><a href="{% url 'recipes:home'%}" >home</a></li>
-                <li><a href="{% url 'recipes:login'%}" >login</a></li>
                 <li><a href="{% url 'recipes:register'%}" >register </a></li>
             </ul>
         </nav>

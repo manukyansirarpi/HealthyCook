@@ -3,5 +3,14 @@
 {% block title %}Login{% endblock %}
 
 {% block body_bloxk %}
-<h1>login</h1>
+
+    <form action="{% url 'recipes:user_login' %}" method="post">
+        {%csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder = "Enter username">
+        <label for="password">Password:</label>
+        <input type="text" name="password" placeholder = "Enter password">
+
+        <input type="submit" name="" value="Login">
+    </form>
 {% endblock %}
