@@ -27,8 +27,8 @@ SECRET_KEY = 'h8s%mtu4)zu#vf0nin&e3y1o(yvc&-ah0gv2(ul593ox0*0nkd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sirarpi.pythonanywhere.com']
-
+ALLOWED_HOSTS = ['sirarpi.pythonanywhere.com', '127.0.0.1']
+CSRF_COOKIE_DOMAIN = ['sirarpi.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 

@@ -4,13 +4,16 @@
 
 {% block body_bloxk %}
 
-    <form action="{% url 'recipes:user_login' %}" method="post">
+    <form action="{% url 'recipes:user_login' %}" method="post" class="l-form">
         {%csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder = "Enter username">
-        <label for="password">Password:</label>
-        <input type="text" name="password" placeholder = "Enter password">
-
-        <input type="submit" name="" value="Login">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+             <input type="text" class="form-control" name="username" placeholder = "Enter username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" class="form-control" name="password" placeholder = "Enter password">
+        </div>
+        <input type="submit" name="" value="Login" class="btn btn-primary">
     </form>
 {% endblock %}
