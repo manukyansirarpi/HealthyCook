@@ -1,0 +1,33 @@
+.btn-primary, .btn-primary:hover {
+    color: #fff;
+    background-color: #8465ab;
+    border-color: #8465ab;
+}
+.btn-secondary, .btn-secondary:hover {
+    color: #fff;
+    background-color: #c5b3e6;
+    border-color: #c5b3e6;
+}
+.btn-light, .btn-light:hover {
+    color: #fff;
+    background-color: #b3a6c7;
+    border-color: #b3a6c7;
+}
+.btn-dark, .btn-dark:hover {
+    color: #fff;
+    background-color: #4f3e5f;
+    border-color: #4f3e5f;
+}
+.btn-yellow, .btn-yellow:hover {
+    color: #fff;
+    background-color: #eded7f;
+    border-color: #eded7f;
+}
+a, a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.l-form {
+    width: 500px;
+    margin: 30px auto;
+}

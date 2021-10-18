@@ -3,17 +3,33 @@
 {% block title %} Register {% endblock %}
 
 {% block body_bloxk %}
-    {% if registered %}
-        <h1>Welcome to Recipes, lets start cooking ! </h1>
-        <a href="{% url 'recipes:recipes'%}" >Go to Recipes</a>
-    {% else %}
-        <form method="post" enctype="multipart/form-data" class="l-form">
-            {% csrf_token  %}
-            {{user_form.as_p}}
-            {{acount_form.as_p}}
-            <input type="submit" name="" value="Register">
-        </form>
-    {%endif %}
+    <form method="post" enctype="multipart/form-data" class="l-form">
+        {% csrf_token  %}
 
-
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name:</label>
+            {{user_form.first_name}}
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name:</label>
+            {{user_form.last_name}}
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            {{user_form.email}}
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            {{user_form.username}}
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            {{user_form.password}}
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Choose profile pic:</label>
+            {{acount_form.profile_pic}}
+        </div>
+        <input type="submit" name="" value="Register">
+    </form>
 {% endblock %}

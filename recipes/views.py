@@ -1,4 +1,3 @@
-from django.db.models import F
 from django.shortcuts import render
 from django.views.generic import  TemplateView
 from django.contrib.auth import authenticate, login, logout
@@ -53,8 +52,6 @@ def user_login(request):
 
 def register(request):
 
-    registered = False
-
     if request.method == "POST":
         user_form = UserForm(data=request.POST)
         acount_form = AccountForm(data=request.POST)
@@ -71,8 +68,7 @@ def register(request):
                 account.profile_pic = request.FILES['profile_pic']
 
             account.save()
-
-            registered = True
+            return HttpResponseRedirect(reverse('recipes:user_login'))
         else:
             print(user_form.errors, acount_form.errors)
     else:
@@ -81,6 +77,5 @@ def register(request):
 
     return render(request, 'recipes/register.html', {
         'user_form': user_form,
-        'acount_form': acount_form,
-        'registered': registered
+        'acount_form': acount_form
     })
